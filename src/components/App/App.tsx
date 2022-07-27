@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
+import { MainPage } from "../../pages";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import Intro from "../Intro/Intro";
 import "./App.module.css";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Intro />} />
+        <Route path="/" element={<MainPage />} />
       </Routes>
       <Footer />
     </>
