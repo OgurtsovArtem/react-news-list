@@ -1,0 +1,143 @@
+.card {
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  border-radius: var(--border-radius-16);
+
+  transition: var(--transition-duration-300);
+}
+
+.imageBox {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  position: relative;
+  z-index: var(--z-index-s);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px;
+}
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: var(--border-radius-10);
+}
+
+.blockButton {
+  composes: block;
+}
+
+.interaction {
+  display: flex;
+  gap: 5px;
+}
+
+.interaction .blockMessage {
+  position: relative;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  left: -100%;
+  transition: var(--transition-duration-300) ease-in-out;
+}
+
+.icon {
+  background-color: white;
+  margin: 8px;
+  stroke: var(--color-simulator-gray-text);
+  transition: stroke var(--transition-duration-300) ease-in-out;
+}
+
+.iconActive {
+  fill: var(--color-main-blue);
+  stroke: var(--color-main-blue);
+}
+
+.tag {
+  font: var(--font-Roboto-14-normal);
+  padding: 8px 12px;
+}
+
+.message {
+  font: var(--font-Roboto-10-normal);
+  padding: 16px 8px;
+}
+
+.description {
+  padding: 20px 24px 24px 24px;
+  cursor: pointer;
+}
+
+.date {
+  font: var(--font-Source-Sans-Pro-18-regular);
+  color: var(--color-simulator-gray-text);
+}
+
+.title {
+  font: var(--font-Roboto-Slab-26-regular);
+  margin-top: 12px;
+}
+
+.text {
+  font: var(--font-Roboto-16-regular);
+  margin-top: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.link {
+  display: inline-block;
+  font: var(--font-Roboto-Slab-16-regular);
+  color: var(--color-simulator-gray-text);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+
+@media (any-hover: hover) {
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -7px rgb(0 0 0 / 10%), 0 4px 30px -9px rgb(0 0 0 / 20%);
+  }
+
+  @media screen and (min-width: 767.5px) {
+    .interaction:hover .blockMessage {
+      visibility: visible;
+      pointer-events: auto;
+      opacity: 1;
+      left: 0;
+    }
+  }
+
+  .blockButton:hover .icon {
+    stroke: var(--color-main-primary);
+  }
+
+  .blockButton:hover .iconActive {
+    stroke: var(--color-main-blue);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .blockMessage {
+    display: none;
+  }
+}
