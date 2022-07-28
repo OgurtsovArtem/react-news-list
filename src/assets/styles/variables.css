@@ -36,9 +36,15 @@
 :root {
   --color-main-blue: #2f71e5;
   --color-main-primary: #1a1b22;
+  --color-gray-light: #f5f6f7;
+  --color-gray-easy: rgba(26, 27, 34, 0.5);
   --color-simulator-gray-selected: #e6e8eb;
   --color-simulator-gray-text: #b6bcbf;
   --color-simulator-gray-text-light: #dde0e2;
+  --color-mern-node-js: #9bc147;
+  --color-mern-react: #286091;
+  --color-mern-express: #cd786e;
+  --color-mern-mongodb: #399e45;
 }
 
 /* COLORS INTERACTIVE */
@@ -59,6 +65,7 @@
 
 /* FONTS */
 :root {
+  --font-Roboto-10-normal: 500 10px/12px Roboto, Text, sans-serif;
   --font-Roboto-12-normal: 500 12px/14px Roboto, Text, sans-serif;
   --font-Roboto-14-normal: 500 14px/24px Roboto, Text, sans-serif;
   --font-Roboto-16-normal: 500 16px/24px Roboto, Text, sans-serif;

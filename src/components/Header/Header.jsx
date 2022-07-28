@@ -4,28 +4,36 @@ import Burger from "../Burger/Burger";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import Overaly from "../Overlay/Overlay";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import Modal from "../Modal/Modal";
+import Login from "../Login/Login";
 
 const Header = () => {
   const [activeMenu, setActiveMenu] = useState(false);
-  const [scrollHeader, setscrolledHeader] = useState(false);
+  const [scrollHeader, setScrolledHeader] = useState(false);
+  const [openPopup, setOpenPopup] = useState(false);
+  const [theme, setTheme] = useState("light");
+
+  const location = useLocation();
+
   const [headerRef, headerInView] = useInView({
     threshold: 0,
   });
 
-  const aciveMenu = () => {
-    setActiveMenu(!activeMenu);
-  };
+  const aciveMenu = () => setActiveMenu(!activeMenu);
+  const changePopupStatus = () => setOpenPopup(!openPopup);
 
   useEffect(() => {
-    headerInView ? setscrolledHeader(false) : setscrolledHeader(true);
-  }, [headerInView]);
-  const white = true;
+    headerInView ? setScrolledHeader(false) : setScrolledHeader(true);
+    location.pathname === "/profile" ? setTheme("dark") : setTheme("light");
+  }, [headerInView, location]);
+
   return (
     <header
       ref={headerRef}
       className={clsx(style.header, {
-        [style.headerWhite]: white,
-        [style.dark]: !white,
+        [style.headerWhite]: theme === "light",
+        [style.headerDark]: theme === "dark",
       })}
     >
       <div
@@ -34,7 +42,9 @@ const Header = () => {
         })}
       >
         <div className={clsx("container", style.content)}>
-          <h1 className={style.logo}>NewsExplorer</h1>
+          <Link className={style.logo} to="/">
+            NewsExplorer
+          </Link>
           <Burger onClick={aciveMenu} active={activeMenu} />
           <nav
             className={clsx({
@@ -44,17 +54,33 @@ const Header = () => {
           >
             <ul className={style.list}>
               <li className={style.item}>
-                <a className={style.linkActive} href="/">
+                <NavLink
+                  className={({ isActive }) => (isActive ? style.linkActive : style.link)}
+                  to="/"
+                >
                   Главная
-                </a>
+                </NavLink>
               </li>
               <li className={style.item}>
-                <a className={style.link} href="/">
+                <NavLink
+                  className={({ isActive }) => (isActive ? style.linkActive : style.link)}
+                  to="/profile"
+                >
                   Сохранённые статьи
-                </a>
+                </NavLink>
               </li>
             </ul>
-            <button className={clsx("button-active-effect", style.button)}>Авторизоваться</button>
+            <button
+              className={clsx("button-active-effect", style.button)}
+              onClick={changePopupStatus}
+            >
+              Авторизоваться
+            </button>
+            {openPopup && (
+              <Modal onClose={changePopupStatus}>
+                <Login />
+              </Modal>
+            )}
           </nav>
         </div>
       </div>

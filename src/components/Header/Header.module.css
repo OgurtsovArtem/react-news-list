@@ -25,7 +25,17 @@
 .headerDark {
   color: var(--color-main-primary);
 }
-
+.headerDark .wrapper::before {
+  box-shadow: unset;
+  background-color: #ffffff;
+}
+.headerDark .headerScroll::before {
+  box-shadow: 0px 5px 25px -17px rgba(0, 0, 0, 0.6);
+  background-color: #ffffff;
+}
+.headerDark .wrapper::after {
+  border-color: black;
+}
 .headerDark .linkActive::before {
   background-color: var(--color-main-primary);
 }

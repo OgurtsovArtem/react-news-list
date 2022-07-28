@@ -6,7 +6,7 @@ import github from "../../assets/icons/github.svg";
 const Footer = () => {
   return (
     <footer className={clsx("container", style.footer)}>
-      <p className={style.copyright}>© 2020 Supersite, Powered by News API</p>
+      <p className={style.copyright}>© 2022 Supersite, Powered by News API</p>
       <nav className={style.navigation}>
         <ul className={style.list}>
           <li className={style.item}>

@@ -16,23 +16,22 @@
 .primary:active {
   background-color: var(--color-button-active-blue);
 }
-.primary:hover {
-  background-color: var(--color-button-hover-blue);
-}
+
 .secondary {
   background-color: white;
   color: var(--color-main-primary);
 }
-.secondary:hover {
-  opacity: 0.9;
-}
+
 .secondary[disabled] {
   color: var(--color-simulator-gray-text);
   background-color: var(--color-simulator-gray-selected);
   pointer-events: none;
 }
-
-@media screen and (max-width: 767px) {
-}
-@media screen and (max-width: 583px) {
+@media (any-hover: hover) {
+  .primary:hover {
+    background-color: var(--color-button-hover-blue);
+  }
+  .secondary:hover {
+    opacity: 0.9;
+  }
 }
