@@ -52,7 +52,7 @@
   transform: translateX(-50%);
   height: var(--header-height-desktop);
   z-index: var(--z-index-xxl);
-  transition: var(--transition-duration-300) ease-in-out;
+  transition: height var(--transition-duration-300) ease-in-out;
 }
 
 .headerScroll {

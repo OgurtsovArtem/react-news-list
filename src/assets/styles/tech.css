@@ -6,7 +6,8 @@
 }
 /* BUTTONS */
 .button-active-effect {
-  transition: 0.1s cubic-bezier(0, 0, 0.78, 1.41);
+  transition: transform 0.1s cubic-bezier(0, 0, 0.78, 1.41),
+    box-shadow 0.1s cubic-bezier(0, 0, 0.78, 1.41);
 }
 .button-active-effect:active {
   transform: scale(0.98);

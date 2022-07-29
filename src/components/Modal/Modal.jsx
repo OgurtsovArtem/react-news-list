@@ -4,7 +4,7 @@ import Overaly from "../Overlay/Overlay";
 import style from "./Modal.module.css";
 import icon from "../../assets/icons/close.svg";
 
-const Modal = ({ onClose, children }) => {
+const Modal = ({ onClose, maxWidth, children }) => {
   useEffect(() => {
     const escape = (event) => (event.code === "Escape" ? onClose() : null);
     document.addEventListener("keydown", escape);
