@@ -1,5 +1,5 @@
 import Button from "../Button/Button";
-import Input from "../Input/Input";
+import { Input } from "../../entities/input";
 import style from "./Registration.module.css";
 
 const Registration = ({ onClick }) => {

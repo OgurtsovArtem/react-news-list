@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
-import Input from "../Input/Input";
 import style from "./Login.module.css";
+import { Input } from "../../entities/input";
 
 const Login = ({ onClick }) => {
   return (

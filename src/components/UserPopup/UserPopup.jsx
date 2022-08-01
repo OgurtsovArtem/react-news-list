@@ -8,7 +8,7 @@ const UserPopup = ({ onClose, type }) => {
   const [popup, setPopup] = useState(type);
 
   const changeLogin = () => setPopup("registration");
-  const changeRegistration = () => setPopup("login");
+  const changeRegistration = () => setPopup("done");
   const changeDone = () => setPopup("login");
 
   return (

@@ -5,9 +5,10 @@
 .title {
   font: var(--font-Roboto-24-black);
   margin-bottom: 22px;
+  max-width: 315px;
 }
 
 .changeFormButton {
-  font: var(--font-Inter-12-regular);
+  font: var(--font-Inter-18-regular);
   color: var(--color-main-blue);
 }
