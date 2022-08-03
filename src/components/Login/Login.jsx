@@ -1,7 +1,9 @@
 import Button from "../Button/Button";
 import style from "./Login.module.css";
-import { Input } from "../../features/input";
-import { MAX_PASSWORD_LENGTH, MIN_PASSWORD_LENGTH } from "../../features/input/model";
+import { Input } from "../../entities/input";
+import { inputModel } from "../../entities/input";
+
+const { MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } = inputModel;
 
 const Login = ({ onClick }) => {
   return (

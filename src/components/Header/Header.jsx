@@ -3,9 +3,9 @@ import clsx from "clsx";
 import Burger from "../Burger/Burger";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import Overaly from "../Overlay/Overlay";
+import { Overaly } from "../../shared/ui";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import UserPopup from "../UserPopup/UserPopup";
+import { AuthPopupForm } from "../../widgets/auth-popup-form";
 
 const Header = () => {
   const [activeMenu, setActiveMenu] = useState(false);
@@ -75,7 +75,7 @@ const Header = () => {
             >
               Авторизоваться
             </button>
-            {openPopup && <UserPopup type={"login"} onClose={changePopupStatus} />}
+            {openPopup && <AuthPopupForm type={"login"} onClose={changePopupStatus} />}
           </nav>
         </div>
       </div>

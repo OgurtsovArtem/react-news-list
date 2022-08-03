@@ -1,12 +1,9 @@
 import Button from "../Button/Button";
-import { Input } from "../../features/input";
+import { Input } from "../../entities/input";
 import style from "./Registration.module.css";
-import {
-  MIN_NAME_LENGTH,
-  MAX_NAME_LENGTH,
-  MIN_PASSWORD_LENGTH,
-  MAX_PASSWORD_LENGTH,
-} from "../../features/input/model";
+import { inputModel } from "../../entities/input";
+
+const { MIN_NAME_LENGTH, MAX_NAME_LENGTH, MIN_PASSWORD_LENGTH, MAX_PASSWORD_LENGTH } = inputModel;
 
 const Registration = ({ onClick }) => {
   return (
