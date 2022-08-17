@@ -1,11 +1,11 @@
 import {
   MAX_NAME_LENGTH,
+  MAX_PASSWORD_LENGTH,
   MIN_NAME_LENGTH,
   MIN_PASSWORD_LENGTH,
-  MAX_PASSWORD_LENGTH,
-} from "./constants";
+} from "./constant";
 import { checkEmail, checkName, checkPassword } from "./helpers";
-import { errors } from "./messages";
+import { errorMessages as errors } from "./messages";
 
 export const errorEmail = (value) => {
   switch (true) {
