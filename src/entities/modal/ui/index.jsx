@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import ReactDOM from "react-dom";
 import { Overaly } from "../../../shared/ui";
 import style from "./style.module.css";
@@ -23,7 +23,7 @@ const Modal = ({ onClose, children }) => {
     </section>
   );
 
-  const modalRoot = document.getElementById("modal-root");
+  const modalRoot = useMemo(() => document.getElementById("modal-root"), []);
   return ReactDOM.createPortal(modal, modalRoot);
 };
 
