@@ -1,11 +1,11 @@
-import { useCallback, useState } from "react";
-import { errorEmail, errorMessages, errorName, errorPassword } from "../model";
+import { ChangeEvent, useCallback, useState } from "react";
+import { errorEmail, errorMessages, errorName, errorPassword } from "../lib";
 
 export const useValidation = () => {
-  const [error, setError] = useState(errorMessages.valueMissing);
-  let valid = !error;
+  const [error, setError] = useState<string>(errorMessages.valueMissing);
+  let valid: boolean = !error;
 
-  const onInput = useCallback((event) => {
+  const onInput = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     const { target } = event;
 
     switch (target.name) {

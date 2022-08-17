@@ -2,8 +2,8 @@ import Button from "../../../components/Button/Button";
 import style from "./style.module.css";
 import { Input } from "../../../entities/input";
 import { useEffect } from "react";
-import { MAX_PASSWORD_LENGTH, MIN_PASSWORD_LENGTH } from "../../../entities/input/model";
-import { useValidation } from "../../../entities/input/hooks";
+import { useValidation } from "../../../entities/input/hooks/model";
+import { MAX_PASSWORD_LENGTH, MIN_PASSWORD_LENGTH } from "../../../entities/input/lib";
 
 const LoginForm = ({ onClick, formProps }) => {
   // Учитывать порядок передачи аргументов. см. компонент Form

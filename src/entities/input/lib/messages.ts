@@ -1,6 +1,17 @@
-export const errorMessages = {
+import {
+  IMessagesEamilTypes,
+  IMessagesNameTypes,
+  IMessagesPaswordTypes,
+  IMessageTypes,
+} from "../types";
+
+export const errorMessages: IMessageTypes<
+  IMessagesNameTypes,
+  IMessagesEamilTypes,
+  IMessagesPaswordTypes
+> = {
   name: {
-    tooShort: `Имя должно содержать больше 2-х символов`,
+    tooShort: "Имя должно содержать больше 2-х символов",
     tooLong: "У нас больше нет символов ヽ(°□° )ノ",
     patternMismatch: "Ипользовать можно буквы и цифры, первый символ обязательно буква",
   },

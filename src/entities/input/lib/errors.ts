@@ -7,7 +7,7 @@ import {
 import { checkEmail, checkName, checkPassword } from "./helpers";
 import { errorMessages as errors } from "./messages";
 
-export const errorEmail = (value) => {
+export const errorEmail = (value: string): string => {
   switch (true) {
     case value.length === 0:
       return errors.valueMissing;
@@ -18,7 +18,7 @@ export const errorEmail = (value) => {
   }
 };
 
-export const errorName = (value) => {
+export const errorName = (value: string): string => {
   switch (true) {
     case value.length === 0:
       return errors.valueMissing;
@@ -33,7 +33,7 @@ export const errorName = (value) => {
   }
 };
 
-export const errorPassword = (value) => {
+export const errorPassword = (value: string): string => {
   switch (true) {
     case value.length === 0:
       return errors.valueMissing;
