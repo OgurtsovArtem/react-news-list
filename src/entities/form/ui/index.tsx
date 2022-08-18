@@ -1,15 +1,6 @@
-import { FC, FormEvent, ReactElement, useState } from "react";
+import { FC, FormEvent, useState } from "react";
 import { sendForm } from "../api";
-
-interface IFormTypes {
-  url: string;
-  children(
-    handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void,
-    formIsValid: boolean,
-    checkValidForm: () => void,
-    onSubmit: (event: FormEvent<HTMLFormElement>) => void
-  ): ReactElement;
-}
+import { IFormTypes } from "../types";
 
 const Form: FC<IFormTypes> = ({ children }) => {
   const [formData, setFormData] = useState({});
@@ -28,10 +19,10 @@ const Form: FC<IFormTypes> = ({ children }) => {
     });
   };
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
-    // event.preventDefault();
-    // const path = event.target.getAttribute("name");
-    // console.log(path);
-    // sendForm(path, formData).then((res) => console.log(res));
+    event.preventDefault();
+    const path = event.currentTarget.getAttribute("name");
+    console.log(path);
+    sendForm(path, formData).then((res) => console.log(res));
   };
 
   return <div>{children(handleInputChange, formIsValid, checkValidForm, onSubmit)}</div>;

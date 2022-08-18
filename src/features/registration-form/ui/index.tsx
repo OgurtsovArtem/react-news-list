@@ -1,3 +1,10 @@
+import style from "./style.module.css";
+
+import { useEffect } from "react";
+import { FC } from "react";
+import { IRegistrationFormTypes } from "../types";
+import { Input } from "entities/input";
+import Button from "components/Button/Button";
 import { useValidation } from "entities/input/hooks/model";
 import {
   MAX_NAME_LENGTH,
@@ -5,27 +12,9 @@ import {
   MIN_NAME_LENGTH,
   MIN_PASSWORD_LENGTH,
 } from "entities/input/lib";
-import { FC, FormEvent } from "react";
-import { useEffect } from "react";
-import Button from "../../../components/Button/Button";
-import { Input } from "../../../entities/input";
 
-import style from "./style.module.css";
-
-interface IFormPropsTypes {
-  handleInputChange: (event: React.FormEvent<HTMLFormElement>) => void;
-  formIsValid: boolean;
-  checkValidForm: () => void;
-  event: (event: React.FormEventHandler<HTMLFormElement>) => void;
-}
-interface IRegistrationFormTypes<T> {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  formProps: Array<T>;
-}
-
-const RegistrationForm: FC<IRegistrationFormTypes<IFormPropsTypes>> = ({ onClick, formProps }) => {
+const RegistrationForm: FC<IRegistrationFormTypes> = ({ onClick, formProps }) => {
   // Учитывать порядок передачи аргументов. см. компонент Form
-  console.log(formProps);
   const [handleInputChange, formIsValid, checkValidForm, onSubmit] = formProps;
   const password = useValidation();
   const email = useValidation();

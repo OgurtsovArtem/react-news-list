@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import { Modal } from "../../../entities/modal";
 import { RegistrationForm } from "../../../features/registration-form";
 import { LoginForm } from "../../../features/login-form";
 import { Done } from "../../../features/done";
 import Form from "../../../entities/form/ui";
 
-const AuthPopupForm = ({ onClose, type }) => {
+interface IAuthPopupFormTypes {
+  onClose: () => void;
+  type: string;
+}
+
+const AuthPopupForm: FC<IAuthPopupFormTypes> = ({ onClose, type }) => {
   const [popup, setPopup] = useState(type);
 
   const changeLogin = () => setPopup("registration");

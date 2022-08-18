@@ -1,6 +1,8 @@
+import { FC } from "react";
+import { IInputTypes } from "../types";
 import style from "./style.module.css";
 
-const Input = (props) => {
+const Input: FC<IInputTypes> = (props) => {
   const {
     name,
     type,

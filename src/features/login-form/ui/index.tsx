@@ -1,11 +1,12 @@
-import Button from "../../../components/Button/Button";
+import Button from "components/Button/Button";
 import style from "./style.module.css";
-import { Input } from "../../../entities/input";
-import { useEffect } from "react";
-import { useValidation } from "../../../entities/input/hooks/model";
-import { MAX_PASSWORD_LENGTH, MIN_PASSWORD_LENGTH } from "../../../entities/input/lib";
+import { Input } from "entities/input";
+import { FC, useEffect } from "react";
+import { useValidation } from "entities/input/hooks/model";
+import { MAX_PASSWORD_LENGTH, MIN_PASSWORD_LENGTH } from "entities/input/lib";
+import { ILoginFormTypes } from "../types";
 
-const LoginForm = ({ onClick, formProps }) => {
+const LoginForm: FC<ILoginFormTypes> = ({ onClick, formProps }) => {
   // Учитывать порядок передачи аргументов. см. компонент Form
   const [handleInputChange, formIsValid, checkValidForm, send] = formProps;
   const password = useValidation();
@@ -24,7 +25,7 @@ const LoginForm = ({ onClick, formProps }) => {
           name="Email"
           placeholder="Введите почту"
           onChange={handleInputChange}
-          onInput={(event) => email.onInput(event)}
+          onInput={email.onInput}
           error={email.error}
         />
         <Input
@@ -34,7 +35,7 @@ const LoginForm = ({ onClick, formProps }) => {
           minLength={MIN_PASSWORD_LENGTH}
           maxLength={MAX_PASSWORD_LENGTH}
           onChange={handleInputChange}
-          onInput={(event) => password.onInput(event)}
+          onInput={password.onInput}
           error={password.error}
         />
         <Button className={style.button} type="submit" color="primary" disabled={!formIsValid}>

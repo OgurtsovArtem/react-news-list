@@ -1,12 +1,13 @@
-import { useEffect, useMemo } from "react";
+import { FC, useEffect, useMemo } from "react";
 import ReactDOM from "react-dom";
 import { Overaly } from "../../../shared/ui";
 import style from "./style.module.css";
 import icon from "../../../shared/assets/icons/close.svg";
+import { IModalProps } from "../types";
 
-const Modal = ({ onClose, children }) => {
+const Modal: FC<IModalProps> = ({ onClose, children }) => {
   useEffect(() => {
-    const escape = (event) => (event.code === "Escape" ? onClose() : null);
+    const escape = (event: KeyboardEvent) => (event.code === "Escape" ? onClose() : null);
     document.addEventListener("keydown", escape);
     return () => document.removeEventListener("keydown", escape);
   }, [onClose]);
@@ -23,7 +24,7 @@ const Modal = ({ onClose, children }) => {
     </section>
   );
 
-  const modalRoot = useMemo(() => document.getElementById("modal-root"), []);
+  const modalRoot = useMemo(() => document.getElementById("modal-root") as HTMLDivElement, []);
   return ReactDOM.createPortal(modal, modalRoot);
 };
 
