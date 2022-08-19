@@ -1,10 +1,9 @@
 import style from "./style.module.css";
-
 import { useEffect } from "react";
 import { FC } from "react";
 import { IRegistrationFormTypes } from "../types";
 import { Input } from "entities/input";
-import Button from "components/Button/Button";
+import { Button } from "shared/ui/Button";
 import { useValidation } from "entities/input/hooks/model";
 import {
   MAX_NAME_LENGTH,

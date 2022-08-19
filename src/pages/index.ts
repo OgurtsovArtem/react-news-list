@@ -1,4 +1,2 @@
-import MainPage from "./Main/Main";
-import Profile from "./Profile/Profile";
-
-export { MainPage, Profile };
+export { default as MainPage } from "./Main";
+export { default as Profile } from "./Profile";

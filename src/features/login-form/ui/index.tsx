@@ -1,4 +1,4 @@
-import Button from "components/Button/Button";
+import { Button } from "shared/ui/Button";
 import style from "./style.module.css";
 import { Input } from "entities/input";
 import { FC, useEffect } from "react";

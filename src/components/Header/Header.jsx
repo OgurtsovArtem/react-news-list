@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Burger from "../Burger/Burger";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { Overaly } from "../../shared/ui";
+import Overaly from "shared/ui/Overlay/ui";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthPopupForm } from "../../widgets/auth-popup-form";
 
