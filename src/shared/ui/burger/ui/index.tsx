@@ -1,7 +1,11 @@
 import clsx from "clsx";
+import { FC, MouseEventHandler } from "react";
 import style from "./style.module.css";
 
-const Burger = ({ onClick, active }) => {
+const Burger: FC<{ onClick: MouseEventHandler<HTMLDivElement>; active: boolean }> = ({
+  onClick,
+  active,
+}) => {
   return (
     <div
       onClick={onClick}

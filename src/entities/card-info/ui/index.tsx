@@ -1,14 +1,18 @@
 import style from "./style.module.css";
 import trashIcon from "app/assets/icons/trash.svg";
 import clsx from "clsx";
-import { useState } from "react";
+import { FC, useState } from "react";
 
-const CardInfo = ({ type }) => {
+const CardInfo: FC<{ type?: string }> = ({ type }) => {
   const [card, setCard] = useState(false);
   const auth = false;
   const saved = true;
   const message =
-    auth & saved ? "Убрать из сохранённых" : auth ? "Сохранить" : "Войдите, чтобы сохранять статьи";
+    auth && saved
+      ? "Убрать из сохранённых"
+      : auth
+      ? "Сохранить"
+      : "Войдите, чтобы сохранять статьи";
 
   const addCard = () => {
     setCard(!card);

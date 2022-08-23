@@ -1,6 +1,7 @@
+import { FC, MouseEventHandler } from "react";
 import style from "./style.module.css";
 
-const Done = ({ onClick }) => {
+const Done: FC<{ onClick: MouseEventHandler<HTMLButtonElement> }> = ({ onClick }) => {
   return (
     <div className={style.container}>
       <legend className={style.title}>Пользователь успешно зарегистрирован!</legend>

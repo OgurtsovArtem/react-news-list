@@ -10,7 +10,7 @@ import {
   MIN_NAME_LENGTH,
   MIN_PASSWORD_LENGTH,
 } from "entities/input/lib";
-import Form from "entities/form/ui";
+import { Form } from "entities/form";
 import { useValidForm } from "entities/form/hooks";
 
 const RegistrationForm: FC<IRegistrationFormTypes> = ({ onClick }) => {

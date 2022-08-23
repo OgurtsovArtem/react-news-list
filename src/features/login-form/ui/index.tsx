@@ -5,7 +5,7 @@ import { FC } from "react";
 import { useValidation } from "entities/input/hooks/model";
 import { MAX_PASSWORD_LENGTH, MIN_PASSWORD_LENGTH } from "entities/input/lib";
 import { ILoginFormTypes } from "../types";
-import Form from "entities/form/ui";
+import { Form } from "entities/form";
 import { useValidForm } from "entities/form/hooks";
 
 const LoginForm: FC<ILoginFormTypes> = ({ onClick }) => {
