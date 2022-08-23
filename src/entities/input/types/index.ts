@@ -27,7 +27,7 @@ export interface IInputTypes {
   placeholder?: string;
   maxLength?: number;
   minLength?: number;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   onInput?: (event: ChangeEvent<HTMLInputElement>) => void;
   onBlure?: () => void;
   onFocus?: () => void;
