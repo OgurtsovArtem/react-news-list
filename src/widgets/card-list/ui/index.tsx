@@ -1,8 +1,8 @@
 import clsx from "clsx";
-import { Button } from "shared/ui/Button";
-import { Card } from "features/Card";
-import Loading from "widgets/Loading/ui";
-import { NotFoundCards } from "widgets/NotFoundCards";
+import { Button } from "shared/ui/button";
+import { Card } from "features/card";
+import Loading from "widgets/loading/ui";
+import { NotFoundCards } from "widgets/not-found-cards";
 import style from "./style.module.css";
 import { FC } from "react";
 

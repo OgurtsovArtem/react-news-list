@@ -1,6 +1,6 @@
 import style from "./style.module.css";
-import img from "assets/images/web.png";
-import { CardInfo } from "entities/CardInfo";
+import img from "app/assets/images/web.png";
+import { CardInfo } from "entities/card-info";
 import { FC } from "react";
 
 const Card: FC<{ type?: string }> = ({ type }) => {

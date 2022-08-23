@@ -1,2 +1,2 @@
-export { default as MainPage } from "./Main";
-export { default as Profile } from "./Profile";
+export { default as MainPage } from "./main";
+export { default as Profile } from "./profile";

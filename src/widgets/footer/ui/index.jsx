@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import style from "./Footer.module.css";
-import vk from "../../assets/icons/vk.svg";
-import github from "../../assets/icons/github.svg";
+import style from "./style.module.css";
+import vk from "app/assets/icons/vk.svg";
+import github from "app/assets/icons/github.svg";
 
 const Footer = () => {
   return (

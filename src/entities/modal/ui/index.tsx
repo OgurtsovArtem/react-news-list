@@ -1,6 +1,6 @@
 import { FC, useEffect, useMemo } from "react";
 import ReactDOM from "react-dom";
-import Overaly from "shared/ui/Overlay/ui";
+import Overaly from "shared/ui/overlay/ui";
 import style from "./style.module.css";
 import icon from "shared/assets/icons/close.svg";
 import { IModalProps } from "../types";

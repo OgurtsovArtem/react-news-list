@@ -1,5 +1,5 @@
 import style from "./style.module.css";
-import { Loader } from "shared/ui/Loader";
+import { Loader } from "shared/ui/loader";
 import clsx from "clsx";
 
 const Loading = () => {

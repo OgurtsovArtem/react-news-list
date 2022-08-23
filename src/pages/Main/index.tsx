@@ -1,6 +1,6 @@
-import { About } from "widgets/About";
-import { CardList } from "widgets/CardList";
-import { Intro } from "widgets/Intro";
+import { About } from "widgets/about";
+import { CardList } from "widgets/card-list";
+import { Intro } from "widgets/intro";
 const MainPage = () => {
   return (
     <>

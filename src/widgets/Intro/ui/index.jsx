@@ -1,7 +1,7 @@
 import style from "./style.module.css";
-import img from "assets/images/intro.png";
-import video from "assets/video/intro.mp4";
-import { Button } from "shared/ui/Button";
+import img from "app/assets/images/intro.png";
+import video from "app/assets/video/intro.mp4";
+import { Button } from "shared/ui/button";
 
 const Intro = () => {
   const startSearch = () => {

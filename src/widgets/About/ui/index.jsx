@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import style from "./style.module.css";
-import img from "assets/images/web.png";
+import img from "app/assets/images/web.png";
 
 const About = () => {
   return (

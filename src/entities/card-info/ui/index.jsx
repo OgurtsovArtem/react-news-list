@@ -1,5 +1,5 @@
 import style from "./style.module.css";
-import trashIcon from "assets/icons/trash.svg";
+import trashIcon from "app/assets/icons/trash.svg";
 import clsx from "clsx";
 import { useState } from "react";
 

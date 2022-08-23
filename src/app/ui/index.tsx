@@ -1,9 +1,9 @@
-import style from "./App.module.css";
+import style from "./style.module.css";
 import { Route, Routes } from "react-router-dom";
-import { MainPage, Profile } from "../../pages";
-import "./App.module.css";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import { MainPage, Profile } from "pages";
+import "./style.module.css";
+import { Header } from "widgets/header";
+import { Footer } from "widgets/footer";
 
 function App() {
   return (

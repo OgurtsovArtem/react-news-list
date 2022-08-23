@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import style from "./Burger.module.css";
+import style from "./style.module.css";
 
 const Burger = ({ onClick, active }) => {
   return (

@@ -1,11 +1,11 @@
-import style from "./Header.module.css";
+import style from "./style.module.css";
 import clsx from "clsx";
-import Burger from "../Burger/Burger";
+import { Burger } from "shared/ui/burger";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import Overaly from "shared/ui/Overlay/ui";
+import Overaly from "shared/ui/overlay/ui";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { AuthPopupForm } from "../../widgets/auth-popup-form";
+import { AuthPopupForm } from "widgets/auth-popup-form";
 
 const Header = () => {
   const [activeMenu, setActiveMenu] = useState(false);

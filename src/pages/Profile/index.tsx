@@ -1,5 +1,5 @@
-import { CardList } from "widgets/CardList";
-import { ProfileInfo } from "widgets/ProfileInfo";
+import { CardList } from "widgets/card-list";
+import { ProfileInfo } from "widgets/profile-info";
 
 const Profile = () => {
   return (

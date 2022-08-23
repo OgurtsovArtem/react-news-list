@@ -1,5 +1,5 @@
 import style from "./style.module.css";
-import icon from "assets/icons/not-found.svg";
+import icon from "app/assets/icons/not-found.svg";
 import clsx from "clsx";
 
 const NotFoundCards = () => {
