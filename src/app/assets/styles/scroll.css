@@ -1,0 +1,26 @@
+:root {
+  /* SCROLLBAR */
+  --scrollbar-bg-color: var(--color-simulator-gray-selected);
+  --scrollbar-thumb-color: var(--color-simulator-gray-text);
+  --scrollbar-width: 8px;
+  --scrollbar-radius: 8px;
+  --scrollbar-border: 0 solid transparent;
+}
+.custom-scrollbar {
+  scrollbar-width: var(--scrollbar-width);
+  scrollbar-color: var(--scrollbar-thumb-color);
+}
+/* ширина */
+.custom-scrollbar::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+/* дорожка */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg-color);
+}
+/* Плашка */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border: var(--scrollbar-border);
+  border-radius: var(--scrollbar-radius);
+}

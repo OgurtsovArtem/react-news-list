@@ -1,0 +1,23 @@
+.loading {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: var(--color-gray-light);
+}
+.title {
+  color: var(--color-simulator-gray-text);
+  font: var(--font-Roboto-18-regular);
+  animation: blink1 3s linear infinite;
+}
+
+@keyframes blink1 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
