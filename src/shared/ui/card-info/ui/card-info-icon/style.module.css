@@ -1,0 +1,39 @@
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: var(--border-radius-10);
+  box-shadow: 0px 10px 22px rgba(59, 74, 116, 0.1);
+  cursor: pointer;
+}
+.flag {
+  background-color: white;
+  margin: 8px;
+  stroke: var(--color-simulator-gray-text);
+  transition: stroke var(--transition-duration-300) ease-in-out,
+    fill var(--transition-duration-300) ease-in-out;
+  cursor: pointer;
+}
+.trash {
+  background-color: white;
+  margin: 8px;
+  fill: var(--color-simulator-gray-text);
+  transition: stroke var(--transition-duration-300) ease-in-out,
+    fill var(--transition-duration-300) ease-in-out;
+  cursor: pointer;
+}
+
+.flagActive {
+  fill: var(--color-main-blue);
+  stroke: var(--color-main-blue);
+}
+
+@media (any-hover: hover) {
+  .block:hover .trash {
+    fill: var(--color-main-primary);
+  }
+  .block:hover .flag {
+    stroke: var(--color-main-primary);
+  }
+}

@@ -1,13 +1,13 @@
 import style from "./style.module.css";
 import img from "app/assets/images/web.png";
-import { CardInfo } from "entities/card-info";
 import { FC } from "react";
+import CardBar from "entities/card-bar/ui";
 
 const Card: FC<{ type?: string }> = ({ type }) => {
   return (
     <div className={style.card}>
       <div className={style.imageBox}>
-        <CardInfo type={type} />
+        <CardBar data={type} />
         <img className={style.img} width="400" height="272" src={img} alt="" />
       </div>
       <div className={style.description}>
