@@ -4,6 +4,8 @@ import "app/assets/styles/index.css";
 import { App } from "app";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import "./features/registration-form";
+import "./features/login-form";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
