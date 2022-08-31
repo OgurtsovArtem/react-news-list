@@ -1,5 +1,5 @@
 export interface ILoaderTypes {
-  size: string;
+  size: "medium" | "small" | "large";
   inverse?: boolean;
 }
 export interface ILoaderSizesTypes {
