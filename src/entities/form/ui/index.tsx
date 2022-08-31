@@ -1,5 +1,5 @@
 import { FC, FormEvent, useState } from "react";
-import { sendForm } from "../api";
+
 import { IFormTypes } from "../types";
 
 const Form: FC<IFormTypes> = ({ className, path, children }) => {
@@ -18,7 +18,6 @@ const Form: FC<IFormTypes> = ({ className, path, children }) => {
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    sendForm(path, formData).then((res) => console.log(res));
   };
 
   return (

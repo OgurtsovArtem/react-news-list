@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { ILoginDataTypes, IRegistrationDataTypes } from "shared/api/user";
 
 export interface IFormTypes {
   className?: string;
@@ -6,9 +7,6 @@ export interface IFormTypes {
   children(handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void): ReactElement;
 }
 
-export interface IFormBodyTypes {
-  readonly email?: string;
-  readonly name?: string;
-  readonly password?: string;
-  readonly token?: string;
+export interface IStateTypes {
+  [name: string]: number | string | boolean;
 }
