@@ -6,13 +6,13 @@ import { useInView } from "react-intersection-observer";
 import Overaly from "shared/ui/overlay/ui";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AuthPopupForm } from "widgets/auth-popup-form";
+import { modelModal } from "shared/modal";
+import { Done } from "features/done";
 
 const Header = () => {
   const [activeMenu, setActiveMenu] = useState(false);
   const [scrollHeader, setScrolledHeader] = useState(false);
-  const [openPopup, setOpenPopup] = useState(false);
   const [theme, setTheme] = useState("light");
-
   const location = useLocation();
 
   const [headerRef, headerInView] = useInView({
@@ -20,7 +20,8 @@ const Header = () => {
   });
 
   const aciveMenu = () => setActiveMenu(!activeMenu);
-  const changePopupStatus = () => setOpenPopup(!openPopup);
+  const openAuthPopup = () => modelModal.openModal("auth-modal");
+  const openDonePopup = () => modelModal.openModal("done-modal");
 
   useEffect(() => {
     headerInView ? setScrolledHeader(false) : setScrolledHeader(true);
@@ -69,13 +70,12 @@ const Header = () => {
                 </NavLink>
               </li>
             </ul>
-            <button
-              className={clsx("button-active-effect", style.button)}
-              onClick={changePopupStatus}
-            >
+            <button className={clsx("button-active-effect", style.button)} onClick={openAuthPopup}>
               Авторизоваться
             </button>
-            {openPopup && <AuthPopupForm type={"login"} onClose={changePopupStatus} />}
+            <button className={clsx("button-active-effect", style.button)} onClick={openDonePopup}>
+              Авторизоваться
+            </button>
           </nav>
         </div>
       </div>
