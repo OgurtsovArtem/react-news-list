@@ -1,11 +1,16 @@
-import { FC, useEffect, useMemo } from "react";
+import { FC, useCallback, useEffect, useMemo } from "react";
 import ReactDOM from "react-dom";
 import Overaly from "shared/ui/overlay/ui";
 import style from "./style.module.css";
 import icon from "shared/assets/icons/close.svg";
 import { IModalProps } from "../types";
+import { modelModal } from "shared/modal";
 
-const Modal: FC<IModalProps> = ({ onClose, children }) => {
+const Modal: FC<IModalProps> = ({ children, id }) => {
+  const onClose = useCallback(() => {
+    modelModal.closeModal(id);
+  }, [id]);
+
   useEffect(() => {
     const escape = (event: KeyboardEvent) => (event.code === "Escape" ? onClose() : null);
     document.addEventListener("keydown", escape);
