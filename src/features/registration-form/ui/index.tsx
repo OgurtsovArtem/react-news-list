@@ -15,6 +15,8 @@ import {
   MIN_NAME_LENGTH,
   MIN_PASSWORD_LENGTH,
 } from "entities/input/lib";
+import { modelModal } from "shared/modal";
+import { AUTH_MODAL_ID, DONE_MODAL_ID } from "widgets/popups/lib/names";
 
 const RegistrationForm: FC<IRegistrationFormTypes> = ({ onClick }) => {
   const password = useValidation();
@@ -27,11 +29,16 @@ const RegistrationForm: FC<IRegistrationFormTypes> = ({ onClick }) => {
   const response = useStore(modelRegistration.$registrationForm);
   const error = useStore(modelRegistration.$isRegistrationFormFailed);
   const loading = useStore(modelRegistration.$isRegistrationFormLoading);
+  const errMessage = useStore(modelRegistration.$registrationFormFailMessage);
 
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
     modelRegistration.sendForm(formData);
     console.log(response, error, loading);
+    if (response) {
+      modelModal.closeModal(AUTH_MODAL_ID);
+      modelModal.openModal(DONE_MODAL_ID);
+    }
   };
 
   return (
@@ -68,6 +75,7 @@ const RegistrationForm: FC<IRegistrationFormTypes> = ({ onClick }) => {
       <Button className={style.button} type="submit" color="primary" disabled={!isValid}>
         {loading ? <Loader size="small" inverse /> : "Зарегистрироваться"}
       </Button>
+      <p className={style.error}>{error && errMessage}</p>
       <div className={style.footer}>
         <span className={style.text}>или</span>
         <button className={style.changeFormButton} onClick={onClick}>

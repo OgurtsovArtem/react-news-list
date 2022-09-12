@@ -6,6 +6,13 @@
   font: var(--font-Roboto-24-black);
   margin-bottom: 22px;
 }
+.error {
+  font: var(--font-Inter-12-regular);
+  color: var(--color-error);
+  margin-top: 3px;
+  min-height: 15px;
+  text-align: center;
+}
 .button {
   margin-top: 40px;
   width: 100%;
@@ -15,7 +22,7 @@
   gap: 8px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 16px;
+  margin-top: 10px;
 }
 .text {
   font: var(--font-Inter-12-regular);
