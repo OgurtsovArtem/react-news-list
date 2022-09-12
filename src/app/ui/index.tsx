@@ -4,6 +4,7 @@ import { MainPage, Profile } from "pages";
 import "./style.module.css";
 import { Header } from "widgets/header";
 import { Footer } from "widgets/footer";
+import { Popups } from "widgets/popups";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </main>
+      <Popups />
       <Footer />
     </>
   );
