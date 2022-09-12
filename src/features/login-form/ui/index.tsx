@@ -17,14 +17,14 @@ const LoginForm: FC<ILoginFormTypes> = ({ onClick }) => {
   const isValid = useValidForm(password.valid, email.valid);
   const { formData, handleInputChange } = useForm();
 
-  const response = useStore(modelLogin.$loginForm);
   const error = useStore(modelLogin.$isLoginFormFailed);
   const loading = useStore(modelLogin.$isLoginFormLoading);
+  const errMessage = useStore(modelLogin.$loginFormFailMessage);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    modelLogin.removeError();
     modelLogin.sendForm(formData);
-    console.log(response, error, loading);
   };
 
   return (
@@ -48,9 +48,11 @@ const LoginForm: FC<ILoginFormTypes> = ({ onClick }) => {
         onInput={password.onInput}
         error={password.error}
       />
+
       <Button className={style.button} type="submit" color="primary" disabled={!isValid}>
         {loading ? <Loader size="small" inverse /> : "Войти"}
       </Button>
+      <p className={style.error}>{error && errMessage}</p>
       <div className={style.footer}>
         <span className={style.text}>или</span>
         <button className={style.changeFormButton} onClick={onClick} type="button">
