@@ -1,15 +1,17 @@
 import { Button } from "shared/ui/button";
 import style from "./style.module.css";
 import { Input } from "entities/input";
-import { FC, FormEvent } from "react";
+import { FC, FormEvent, useEffect } from "react";
 import { useValidation } from "entities/input/hooks/model";
 import { MAX_PASSWORD_LENGTH, MIN_PASSWORD_LENGTH } from "entities/input/lib";
 import { ILoginFormTypes } from "../types";
 import { useValidForm } from "entities/form/hooks";
 import { useForm } from "entities/form/model";
-import { modelLogin } from "../model";
+import { modelAuth } from "shared/models/auth-form";
 import { useStore } from "effector-react";
 import { Loader } from "shared/ui/loader";
+import { modelModal } from "shared/models/modal";
+import { AUTH_MODAL_ID, DONE_LOGIN_MODAL_ID } from "widgets/popups/lib/names";
 
 const LoginForm: FC<ILoginFormTypes> = ({ onClick }) => {
   const password = useValidation();
@@ -17,15 +19,32 @@ const LoginForm: FC<ILoginFormTypes> = ({ onClick }) => {
   const isValid = useValidForm(password.valid, email.valid);
   const { formData, handleInputChange } = useForm();
 
-  const error = useStore(modelLogin.$isLoginFormFailed);
-  const loading = useStore(modelLogin.$isLoginFormLoading);
-  const errMessage = useStore(modelLogin.$loginFormFailMessage);
+  const response = useStore(modelAuth.$authFormData);
+  const error = useStore(modelAuth.$authFormFailed);
+  const loading = useStore(modelAuth.$authFormLoading);
+  const errMessage = useStore(modelAuth.$authFormFailMessage);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    modelLogin.removeError();
-    modelLogin.sendForm(formData);
+    modelAuth.removeError();
+    modelAuth.sendLoginForm(formData);
+    console.log(response);
   };
+
+  useEffect(() => {
+    if (error) {
+      modelAuth.removeError();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [formData]);
+
+  useEffect(() => {
+    if (response) {
+      modelModal.closeModal(AUTH_MODAL_ID);
+      modelAuth.resetData();
+      modelModal.openModal(DONE_LOGIN_MODAL_ID);
+    }
+  }, [response]);
 
   return (
     <form className={style.form} onSubmit={onSubmit}>

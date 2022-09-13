@@ -1,12 +1,12 @@
 import style from "./style.module.css";
-import { FC, FormEvent } from "react";
+import { FC, FormEvent, useEffect } from "react";
 import { IRegistrationFormTypes } from "../types";
 import { Input } from "entities/input";
 import { Button } from "shared/ui/button";
 import { useValidation } from "entities/input/hooks/model";
 import { useValidForm } from "entities/form/hooks";
 import { useForm } from "entities/form/model";
-import { modelRegistration } from "../model";
+import { modelAuth } from "shared/models/auth-form";
 import { useStore } from "effector-react";
 import { Loader } from "shared/ui/loader";
 import {
@@ -15,8 +15,8 @@ import {
   MIN_NAME_LENGTH,
   MIN_PASSWORD_LENGTH,
 } from "entities/input/lib";
-import { modelModal } from "shared/modal";
-import { AUTH_MODAL_ID, DONE_MODAL_ID } from "widgets/popups/lib/names";
+import { modelModal } from "shared/models/modal";
+import { AUTH_MODAL_ID, DONE_REGISTR_MODAL_ID } from "widgets/popups/lib/names";
 
 const RegistrationForm: FC<IRegistrationFormTypes> = ({ onClick }) => {
   const password = useValidation();
@@ -26,20 +26,32 @@ const RegistrationForm: FC<IRegistrationFormTypes> = ({ onClick }) => {
   const isValid = useValidForm(password.valid, email.valid, name.valid);
   const { formData, handleInputChange } = useForm();
 
-  const response = useStore(modelRegistration.$registrationForm);
-  const error = useStore(modelRegistration.$isRegistrationFormFailed);
-  const loading = useStore(modelRegistration.$isRegistrationFormLoading);
-  const errMessage = useStore(modelRegistration.$registrationFormFailMessage);
+  const response = useStore(modelAuth.$authFormData);
+  const error = useStore(modelAuth.$authFormFailed);
+  const loading = useStore(modelAuth.$authFormLoading);
+  const errMessage = useStore(modelAuth.$authFormFailMessage);
 
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
-    modelRegistration.sendForm(formData);
+    modelAuth.sendRegistrForm(formData);
     console.log(response, error, loading);
-    if (response) {
-      modelModal.closeModal(AUTH_MODAL_ID);
-      modelModal.openModal(DONE_MODAL_ID);
-    }
   };
+  useEffect(() => {
+    if (error) {
+      modelAuth.removeError();
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [formData]);
+
+  useEffect(() => {
+    if (response) {
+      console.log(response);
+      modelModal.closeModal(AUTH_MODAL_ID);
+      modelAuth.resetData();
+      modelModal.openModal(DONE_REGISTR_MODAL_ID);
+    }
+  }, [response]);
 
   return (
     <form className={style.form} onSubmit={onSubmit}>
