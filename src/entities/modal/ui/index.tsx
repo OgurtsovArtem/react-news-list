@@ -4,7 +4,7 @@ import Overaly from "shared/ui/overlay/ui";
 import style from "./style.module.css";
 import icon from "shared/assets/icons/close.svg";
 import { IModalProps } from "../types";
-import { modelModal } from "shared/modal";
+import { modelModal } from "shared/models/modal";
 
 const Modal: FC<IModalProps> = ({ children, id }) => {
   const onClose = useCallback(() => {
