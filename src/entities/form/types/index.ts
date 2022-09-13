@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import { ILoginDataTypes, IRegistrationDataTypes } from "shared/api/user";
 
 export interface IFormTypes {
   className?: string;
