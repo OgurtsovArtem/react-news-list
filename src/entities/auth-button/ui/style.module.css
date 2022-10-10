@@ -1,0 +1,31 @@
+.button {
+    padding: 12px;
+    border: 1px solid #ffffff;
+    border-radius: 100px;
+    max-height: 50px;
+    font: var(--font-Roboto-18-regular);
+    margin: auto;
+    z-index: var(--z-index-s);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+.button svg {
+    fill: #ffffff;
+    margin-left: 8px;
+}
+
+@media screen and (max-width: 767px) {
+    .button {
+        font: var(--font-Roboto-16-regular);
+    }
+}
+
+@media screen and (max-width: 583px) {
+    .button {
+        margin: 32px auto 0;
+        max-width: 300px;
+        width: 100%;
+    }
+}

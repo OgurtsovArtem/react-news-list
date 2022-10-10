@@ -1,13 +1,15 @@
 import { checkResponse } from 'shared/utils/api';
+import { getCookie } from 'shared/utils/cookie';
 import { MAIN_URL } from 'shared/utils/global';
 
-export const getUser = (token: string) => {
-    return fetch(`${MAIN_URL}/auth/user`, {
+export const getUser = () => {
+    return fetch(`${MAIN_URL}api/users/me`, {
         method: 'GET',
         headers: {
-            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json;charset=utf-8',
+            Authorization: `Bearer ${getCookie('accessToken')}`,
         },
-    });
+    }).then(checkResponse);
 };
 
 export interface ILoginDataTypes {

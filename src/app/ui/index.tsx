@@ -5,8 +5,13 @@ import './style.module.css';
 import { Header } from 'widgets/header';
 import { Footer } from 'widgets/footer';
 import { Popups } from 'widgets/popups';
+import { useEffect } from 'react';
+import { modelAuth } from 'shared/models/auth';
 
 function App() {
+    useEffect(() => {
+        modelAuth.getUser();
+    }, []);
     return (
         <>
             <Header />

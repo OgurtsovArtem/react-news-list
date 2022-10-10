@@ -1,3 +1,4 @@
 import { createEvent } from 'effector';
 
-export const loadUser = createEvent();
+export const getUser = createEvent();
+export const userLogout = createEvent();

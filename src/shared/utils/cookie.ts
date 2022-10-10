@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-escape */
-export const getCookie = (name: string) => {
+export const getCookie = (name: string): string | undefined => {
     const matches = document.cookie.match(
         new RegExp(
             '(?:^|; )' +
@@ -35,5 +35,6 @@ export const setCookie = (name: string, value: string | null, props?: any) => {
 };
 
 export const deleteCookie = (name: string) => {
-    setCookie(name, null, { expires: -1 });
+    console.log(setCookie(name, ' ', { expires: -1 }));
+    setCookie(name, ' ', { expires: -1 });
 };
