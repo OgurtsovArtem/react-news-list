@@ -1,1 +1,1 @@
-import { default as CardBar } from './ui';
+export { default as CardBar } from './ui';
