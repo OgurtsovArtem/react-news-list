@@ -6,7 +6,7 @@ import { Button } from 'shared/ui/button';
 import { useValidation } from 'entities/input/hooks/model';
 import { useValidForm } from 'entities/form/hooks';
 import { useForm } from 'entities/form/model';
-import { modelAuth } from 'shared/models/auth-form';
+import { modelAuthForm } from 'shared/models/auth-form';
 import { useStore } from 'effector-react';
 import { Loader } from 'shared/ui/loader';
 import {
@@ -26,19 +26,19 @@ const RegistrationForm: FC<IRegistrationFormTypes> = ({ onClick }) => {
     const isValid = useValidForm(password.valid, email.valid, name.valid);
     const { formData, handleInputChange } = useForm();
 
-    const response = useStore(modelAuth.$authFormData);
-    const error = useStore(modelAuth.$authFormFailed);
-    const loading = useStore(modelAuth.$authFormLoading);
-    const errMessage = useStore(modelAuth.$authFormFailMessage);
+    const response = useStore(modelAuthForm.$authFormData);
+    const error = useStore(modelAuthForm.$authFormFailed);
+    const loading = useStore(modelAuthForm.$authFormLoading);
+    const errMessage = useStore(modelAuthForm.$authFormFailMessage);
 
     const onSubmit = (event: FormEvent) => {
         event.preventDefault();
-        modelAuth.sendRegistrForm(formData);
+        modelAuthForm.sendRegistrForm(formData);
         console.log(response, error, loading);
     };
     useEffect(() => {
         if (error) {
-            modelAuth.removeError();
+            modelAuthForm.removeError();
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -48,7 +48,7 @@ const RegistrationForm: FC<IRegistrationFormTypes> = ({ onClick }) => {
         if (response) {
             console.log(response);
             modelModal.closeModal(AUTH_MODAL_ID);
-            modelAuth.resetData();
+            modelAuthForm.resetData();
             modelModal.openModal(DONE_REGISTR_MODAL_ID);
         }
     }, [response]);

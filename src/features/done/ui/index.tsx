@@ -1,5 +1,5 @@
 import { Modal } from 'entities/modal';
-import { FC, MouseEventHandler } from 'react';
+import { FC, MouseEvent, MouseEventHandler } from 'react';
 import { modelModal } from 'shared/models/modal';
 import { AUTH_MODAL_ID } from 'widgets/popups/lib/names';
 import style from './style.module.css';
@@ -11,8 +11,19 @@ interface IDoneModalProps {
     buttonText?: string | number | null;
 }
 
-const DoneModal: FC<IDoneModalProps> = ({ id, title, buttonText = null }) => {
-    const onClick = () => modelModal.openModal(AUTH_MODAL_ID);
+const DoneModal: FC<IDoneModalProps> = ({
+    id,
+    title,
+    buttonText = null,
+    onClick,
+}) => {
+    const onClickHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
+        if (typeof onClick === 'function') {
+            onClick(event);
+        }
+        modelModal.closeModal(id);
+    };
+
     return (
         <Modal id={id}>
             <div className={style.container}>
@@ -20,7 +31,7 @@ const DoneModal: FC<IDoneModalProps> = ({ id, title, buttonText = null }) => {
                 {buttonText && (
                     <button
                         className={style.changeFormButton}
-                        onClick={onClick}
+                        onClick={onClickHandler}
                         type="button"
                     >
                         {buttonText}

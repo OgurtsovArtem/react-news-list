@@ -7,11 +7,13 @@ import { MAX_PASSWORD_LENGTH, MIN_PASSWORD_LENGTH } from 'entities/input/lib';
 import { ILoginFormTypes } from '../types';
 import { useValidForm } from 'entities/form/hooks';
 import { useForm } from 'entities/form/model';
-import { modelAuth } from 'shared/models/auth-form';
+import { modelAuthForm } from 'shared/models/auth-form';
 import { useStore } from 'effector-react';
 import { Loader } from 'shared/ui/loader';
 import { modelModal } from 'shared/models/modal';
 import { AUTH_MODAL_ID, DONE_LOGIN_MODAL_ID } from 'widgets/popups/lib/names';
+import { setCookie } from 'shared/utils/cookie';
+import { modelAuth } from 'shared/models/auth';
 
 const LoginForm: FC<ILoginFormTypes> = ({ onClick }) => {
     const password = useValidation();
@@ -19,21 +21,20 @@ const LoginForm: FC<ILoginFormTypes> = ({ onClick }) => {
     const isValid = useValidForm(password.valid, email.valid);
     const { formData, handleInputChange } = useForm();
 
-    const response = useStore(modelAuth.$authFormData);
-    const error = useStore(modelAuth.$authFormFailed);
-    const loading = useStore(modelAuth.$authFormLoading);
-    const errMessage = useStore(modelAuth.$authFormFailMessage);
+    const response = useStore(modelAuthForm.$authFormData);
+    const error = useStore(modelAuthForm.$authFormFailed);
+    const loading = useStore(modelAuthForm.$authFormLoading);
+    const errMessage = useStore(modelAuthForm.$authFormFailMessage);
 
     const onSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        modelAuth.removeError();
-        modelAuth.sendLoginForm(formData);
-        console.log(response);
+        modelAuthForm.removeError();
+        modelAuthForm.sendLoginForm(formData);
     };
 
     useEffect(() => {
         if (error) {
-            modelAuth.removeError();
+            modelAuthForm.removeError();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [formData]);
@@ -41,7 +42,9 @@ const LoginForm: FC<ILoginFormTypes> = ({ onClick }) => {
     useEffect(() => {
         if (response) {
             modelModal.closeModal(AUTH_MODAL_ID);
-            modelAuth.resetData();
+            setCookie('accessToken', response.token);
+            modelAuth.getUser();
+            modelAuthForm.resetData();
             modelModal.openModal(DONE_LOGIN_MODAL_ID);
         }
     }, [response]);

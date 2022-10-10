@@ -11,7 +11,7 @@ import {
     $authFormLoading,
 } from './store';
 
-export const modelAuth = {
+export const modelAuthForm = {
     $authFormData,
     $authFormFailMessage,
     $authFormFailed,
