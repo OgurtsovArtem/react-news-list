@@ -3,10 +3,10 @@ import { FC } from 'react';
 import style from './style.module.css';
 import { IOverlayProps } from '../types';
 
-const Overaly: FC<IOverlayProps> = ({ onClose, className }) => {
+const Overlay: FC<IOverlayProps> = ({ onClose, className }) => {
     return (
         <div onClick={onClose} className={clsx(className, style.overlay)}></div>
     );
 };
 
-export default Overaly;
+export default Overlay;
