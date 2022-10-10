@@ -1,6 +1,6 @@
-export * from "./card-info-icon";
-export * from "./card-info-message";
-export * from "./card-info-type";
+export * from './card-info-icon';
+export * from './card-info-message';
+export * from './card-info-type';
 
 // import style from "./style.module.css";
 // import trashIcon from "app/assets/icons/trash.svg";

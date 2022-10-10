@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 interface ViewerProps {}
 
 const Viewer: FC<ViewerProps> = () => {
-  return <button></button>;
+    return <button></button>;
 };
 
 export default Viewer;

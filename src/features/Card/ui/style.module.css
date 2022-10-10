@@ -1,64 +1,65 @@
 .card {
-  position: relative;
-  background-color: white;
-  overflow: hidden;
-  border-radius: var(--border-radius-16);
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    border-radius: var(--border-radius-16);
 
-  transition: var(--transition-duration-300);
+    transition: var(--transition-duration-300);
 }
 
 .imageBox {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
 }
 
 .img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .description {
-  padding: 20px 24px 24px 24px;
-  cursor: pointer;
+    padding: 20px 24px 24px 24px;
+    cursor: pointer;
 }
 
 .date {
-  font: var(--font-Source-Sans-Pro-18-regular);
-  color: var(--color-simulator-gray-text);
+    font: var(--font-Source-Sans-Pro-18-regular);
+    color: var(--color-simulator-gray-text);
 }
 
 .title {
-  font: var(--font-Roboto-Slab-26-regular);
-  margin-top: 12px;
+    font: var(--font-Roboto-Slab-26-regular);
+    margin-top: 12px;
 }
 
 .text {
-  font: var(--font-Roboto-16-regular);
-  margin-top: 16px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
+    font: var(--font-Roboto-16-regular);
+    margin-top: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 }
 
 .link {
-  display: inline-block;
-  font: var(--font-Roboto-Slab-16-regular);
-  color: var(--color-simulator-gray-text);
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  margin-top: 40px;
+    display: inline-block;
+    font: var(--font-Roboto-Slab-16-regular);
+    color: var(--color-simulator-gray-text);
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-top: 40px;
 }
 
 @media (any-hover: hover) {
-  .card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px -7px rgb(0 0 0 / 10%), 0 4px 30px -9px rgb(0 0 0 / 20%);
-  }
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px -7px rgb(0 0 0 / 10%),
+            0 4px 30px -9px rgb(0 0 0 / 20%);
+    }
 }

@@ -1,5 +1,5 @@
-import { createEffect, Effect } from "effector";
-import { login, registration } from "shared/api/user";
+import { createEffect, Effect } from 'effector';
+import { login, registration } from 'shared/api/user';
 
 /**
  * @remark Типизировать еффект

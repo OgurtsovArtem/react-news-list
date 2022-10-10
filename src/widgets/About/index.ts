@@ -1,1 +1,1 @@
-export { default as About } from "./ui";
+export { default as About } from './ui';

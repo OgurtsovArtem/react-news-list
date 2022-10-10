@@ -1,1 +1,1 @@
-export { default as Loading } from "./ui";
+export { default as Loading } from './ui';

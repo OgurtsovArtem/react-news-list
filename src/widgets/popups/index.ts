@@ -1,1 +1,1 @@
-export { default as Popups } from "./ui";
+export { default as Popups } from './ui';

@@ -1,8 +1,8 @@
-@import url("../fonts/fonts.css");
-@import url("./base.css");
-@import url("./scroll.css");
-@import url("./tech.css");
-@import url("./variables.css");
+@import url('../fonts/fonts.css');
+@import url('./base.css');
+@import url('./scroll.css');
+@import url('./tech.css');
+@import url('./variables.css');
 
 @custom-media --media-mobile-s (max-width: 359px);
 @custom-media --media-mobile-m (max-width: 413px);

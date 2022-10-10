@@ -1,1 +1,1 @@
-export { default as ProfileInfo } from "./ui";
+export { default as ProfileInfo } from './ui';

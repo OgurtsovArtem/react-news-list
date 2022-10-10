@@ -1,1 +1,1 @@
-export { default as Intro } from "./ui";
+export { default as Intro } from './ui';

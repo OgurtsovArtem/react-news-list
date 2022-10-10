@@ -1,3 +1,3 @@
 export interface IRegistrationFormTypes {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+    onClick: React.MouseEventHandler<HTMLButtonElement>;
 }

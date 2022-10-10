@@ -1,1 +1,1 @@
-export { default as NotFoundCards } from "./ui";
+export { default as NotFoundCards } from './ui';

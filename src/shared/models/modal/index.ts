@@ -1,9 +1,9 @@
-import { openModal, closeModal, } from "./events";
-import { $modalList, $modalIsOpen } from "./store";
+import { openModal, closeModal } from './events';
+import { $modalList, $modalIsOpen } from './store';
 
 export const modelModal = {
-  $modalList,
-  $modalIsOpen,
-  openModal,
-  closeModal,
+    $modalList,
+    $modalIsOpen,
+    openModal,
+    closeModal,
 };

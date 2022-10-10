@@ -1,1 +1,1 @@
-export { default as CardList } from "./ui";
+export { default as CardList } from './ui';

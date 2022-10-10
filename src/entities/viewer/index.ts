@@ -1,1 +1,1 @@
-export { default as Viewer } from "./ui";
+export { default as Viewer } from './ui';

@@ -1,4 +1,4 @@
-import { createStore, Store } from "effector";
+import { createStore, Store } from 'effector';
 
 export const $authFormData: Store<null> = createStore(null);
 export const $authFormFailMessage: Store<any> = createStore(null);
