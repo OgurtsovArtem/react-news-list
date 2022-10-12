@@ -1,6 +1,6 @@
 .button {
     padding: 12px;
-    border: 1px solid #ffffff;
+    border: 1px solid var(--color-header-button);
     border-radius: 100px;
     max-height: 50px;
     font: var(--font-Roboto-18-regular);
@@ -12,7 +12,7 @@
     min-width: 120px;
 }
 .button svg {
-    fill: #ffffff;
+    fill: var(--color-header-button);
     margin-left: 8px;
 }
 

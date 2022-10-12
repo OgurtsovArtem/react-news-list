@@ -4,7 +4,7 @@ import { Burger } from 'shared/ui/burger';
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Overlay from 'shared/ui/overlay/ui';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { NavTab } from 'shared/ui/nav-tab';
 import { Nav } from 'shared/ui/nav';
 import { AuthButton } from 'entities/auth-button';
@@ -14,8 +14,6 @@ import { modelAuth } from 'shared/models/auth';
 const Header = () => {
     const [menuIsActive, setMenuIsActive] = useState(false);
     const [scrollHeader, setScrolledHeader] = useState(false);
-    const [theme, setTheme] = useState('light');
-    const location = useLocation();
     const isAuth = useStore(modelAuth.$user);
     const [headerRef, headerInView] = useInView({
         threshold: 0,
@@ -23,21 +21,16 @@ const Header = () => {
 
     const activeMenu = () => setMenuIsActive(!menuIsActive);
 
-    const headerStyle = clsx(style.header, {
-        [style.headerWhite]: theme === 'light',
-        [style.headerDark]: theme === 'dark',
-    });
     const wrapperStyle = clsx(style.wrapper, {
         [style.headerScroll]: scrollHeader,
     });
 
     useEffect(() => {
         headerInView ? setScrolledHeader(false) : setScrolledHeader(true);
-        location.pathname === '/profile' ? setTheme('dark') : setTheme('light');
-    }, [headerInView, location]);
+    }, [headerInView]);
 
     return (
-        <header ref={headerRef} className={headerStyle}>
+        <header ref={headerRef} className={style.header}>
             <div className={wrapperStyle}>
                 <div className={clsx('container', style.content)}>
                     <Link className={style.logo} to="/">

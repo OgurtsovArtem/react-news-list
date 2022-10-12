@@ -54,6 +54,43 @@
     --color-button-active-blue: #2a65cc;
 }
 
+:root[data-theme-header='light'] {
+    --color-header-text: #1a1b22;
+    --color-header-link: #1a1b22;
+    --color-header-button: #1a1b22;
+    --color-header-bg: #ffffff;
+    --color-header-line: #000000;
+    --color-header-logo: #000000;
+}
+
+:root[data-theme-header='dark'] {
+    --color-header-text: #ffffff;
+    --color-header-link: #ffffff;
+    --color-header-button: #ffffff;
+    --color-header-bg: rgb(136 148 157 / 53%);
+    --color-header-line: rgba(255, 255, 255, 0.3);
+    --color-header-logo: #ffffff;
+}
+
+:root[data-theme='light'] {
+    --color-main-blue: #2f71e5;
+    --color-main-primary: #1a1b22;
+    --color-gray-light: #f5f6f7;
+    --color-gray-easy: rgba(26, 27, 34, 0.5);
+    --color-simulator-gray-selected: #e6e8eb;
+    --color-simulator-gray-text: #b6bcbf;
+    --color-simulator-gray-text-light: #dde0e2;
+    --color-mern-node-js: #9bc147;
+    --color-mern-react: #286091;
+    --color-mern-express: #cd786e;
+    --color-mern-mongodb: #399e45;
+    --color-error: #ff0000;
+}
+
+:root[data-theme='dark'] {
+    --background-color: #2b3e51;
+}
+
 /* BORDERS */
 :root {
     --border-radius-6: 6px;
