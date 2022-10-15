@@ -1,15 +1,23 @@
 import style from './style.module.css';
 import icon from 'app/assets/icons/not-found.svg';
 import clsx from 'clsx';
+import { FC } from 'react';
+import { INotFoundCardsProps } from '../types';
 
-const NotFoundCards = () => {
+const NotFoundCards: FC<INotFoundCardsProps> = ({ title, text }) => {
     return (
-        <section className={clsx('container', style.NotFoundCards)}>
-            <img className={style.icon} src={icon} alt="sad" />
-            <h2 className={style.title}>Ничего не найдено</h2>
-            <p className={style.text}>
-                К сожалению по вашему запросу ничего не найдено.
-            </p>
+        <section className={style.NotFoundCards}>
+            <div className={clsx('container', style.container)}>
+                <img
+                    className={style.icon}
+                    src={icon}
+                    alt="sad"
+                    width={96}
+                    height={96}
+                />
+                <h2 className={style.title}>{title}</h2>
+                <p className={style.text}>{text}</p>
+            </div>
         </section>
     );
 };

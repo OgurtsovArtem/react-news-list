@@ -3,7 +3,6 @@
     background-color: white;
     overflow: hidden;
     border-radius: var(--border-radius-16);
-
     transition: var(--transition-duration-300);
 }
 
@@ -13,7 +12,11 @@
     height: 0;
     overflow: hidden;
 }
-
+.bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px;
+}
 .img {
     position: absolute;
     top: 0;
@@ -35,6 +38,11 @@
 .title {
     font: var(--font-Roboto-Slab-26-regular);
     margin-top: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 .text {

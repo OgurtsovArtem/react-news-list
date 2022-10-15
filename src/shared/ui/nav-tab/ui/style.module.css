@@ -1,6 +1,9 @@
 .item {
     z-index: var(--z-index-m);
 }
+.itemInverse .linkActive::before {
+    background-color: #fff;
+}
 .link {
     position: relative;
     font: var(--font-Roboto-18-regular);

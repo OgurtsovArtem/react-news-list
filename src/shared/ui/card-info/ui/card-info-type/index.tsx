@@ -5,12 +5,15 @@ import style from './style.module.css';
 
 interface IPropsType {
     className?: string;
+    text: string;
 }
 
-export const CardInfoType: FC<IPropsType> = React.memo(({ className }) => {
+const CardInfoType: FC<IPropsType> = React.memo(({ className, text }) => {
     return (
         <div className={clsx(style.block, className)}>
-            <p className={style.tag}>Природа</p>
+            <p className={style.tag}>{text}</p>
         </div>
     );
 });
+
+export default CardInfoType;

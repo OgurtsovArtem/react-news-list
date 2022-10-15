@@ -1,35 +1,27 @@
 import clsx from 'clsx';
-import { Button } from 'shared/ui/button';
-import { Card } from 'features/card';
-import Loading from 'widgets/loading/ui';
-import { NotFoundCards } from 'widgets/not-found-cards';
+import { Card } from 'entities/card';
 import style from './style.module.css';
-import { FC } from 'react';
+import { Button } from 'shared/ui/button';
+import { useStore } from 'effector-react';
+import { modelCards } from 'shared/models/cards';
 
-const CardList: FC<{ type?: string }> = ({ type }) => {
+const Cards = () => {
+    const data = useStore(modelCards.$cards);
+    // const loading = useStore(modelCards.$cardsIsLoading);
+    // const failed = useStore(modelCards.$cardsIsFailed);
     const getMore = () => {
         return;
     };
-
-    const load = false;
-    const notFound = false;
-
-    if (load) {
-        return <NotFoundCards />;
-    }
-
-    if (notFound) {
-        return <Loading />;
-    }
 
     return (
         <section className={style.cardList}>
             <div className={clsx('container', style.wrapper)}>
                 <h1 className={style.title}>Результаты поиска</h1>
                 <div className={style.body}>
-                    {new Array(5).fill(0).map((item, index) => (
-                        <Card key={index} type={type} />
-                    ))}
+                    {data?.articles &&
+                        data.articles.map((data: any, index: number) => (
+                            <Card key={index} data={data} />
+                        ))}
                 </div>
                 <div className={style.footer}>
                     <Button
@@ -45,4 +37,4 @@ const CardList: FC<{ type?: string }> = ({ type }) => {
     );
 };
 
-export default CardList;
+export default Cards;
