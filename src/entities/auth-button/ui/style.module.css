@@ -15,10 +15,17 @@
     fill: var(--color-header-button);
     margin-left: 8px;
 }
+.buttonInverse {
+    border-color: #fff;
+}
+.buttonInverse svg {
+    fill: #fff;
+}
 
 @media screen and (max-width: 767px) {
     .button {
         font: var(--font-Roboto-16-regular);
+        padding: 8px;
     }
 }
 

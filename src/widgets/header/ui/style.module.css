@@ -52,6 +52,9 @@
     z-index: var(--z-index-m);
     color: var(--color-header-logo);
 }
+.logoInverse {
+    color: #fff;
+}
 
 .overlay {
     display: none;

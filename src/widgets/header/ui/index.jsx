@@ -9,17 +9,19 @@ import { NavTab } from 'shared/ui/nav-tab';
 import { Nav } from 'shared/ui/nav';
 import { AuthButton } from 'entities/auth-button';
 import { useStore } from 'effector-react';
-import { modelAuth } from 'shared/models/auth';
+import { modelHeader } from 'shared/models/header-nav';
 
 const Header = () => {
-    const [menuIsActive, setMenuIsActive] = useState(false);
     const [scrollHeader, setScrolledHeader] = useState(false);
-    const isAuth = useStore(modelAuth.$user);
+    const { links } = useStore(modelHeader.$navLinks);
+    const logo = useStore(modelHeader.$navLogo);
+    const buttonText = useStore(modelHeader.$navButton);
+    const menuStatus = useStore(modelHeader.$isActive);
     const [headerRef, headerInView] = useInView({
         threshold: 0,
     });
 
-    const activeMenu = () => setMenuIsActive(!menuIsActive);
+    const activeMenu = () => modelHeader.menuIsActive(!menuStatus);
 
     const wrapperStyle = clsx(style.wrapper, {
         [style.headerScroll]: scrollHeader,
@@ -33,26 +35,35 @@ const Header = () => {
         <header ref={headerRef} className={style.header}>
             <div className={wrapperStyle}>
                 <div className={clsx('container', style.content)}>
-                    <Link className={style.logo} to="/">
-                        NewsExplorer
+                    <Link
+                        className={clsx(style.logo, {
+                            [style.logoInverse]: menuStatus,
+                        })}
+                        to="/"
+                    >
+                        {logo}
                     </Link>
-                    <Burger onClick={activeMenu} active={menuIsActive} />
-                    <Nav activeMenu={menuIsActive}>
-                        <NavTab text="Главная" path="/" />
-                        <NavTab
-                            text=" Сохранённые статьи"
-                            path="/profile"
-                            isVisible={isAuth}
-                        />
-                        <AuthButton text={'Авторизоваться'} />
+                    <Burger onClick={activeMenu} />
+                    <Nav>
+                        {links.map((link) => {
+                            return (
+                                <NavTab
+                                    key={link.id}
+                                    text={link.title}
+                                    path={link.path}
+                                    onlyAuth={link.onlyAuth}
+                                />
+                            );
+                        })}
+                        <AuthButton text={buttonText} />
                     </Nav>
                 </div>
             </div>
             <Overlay
                 onClose={activeMenu}
                 className={clsx({
-                    [style.overlay]: !menuIsActive,
-                    [style.overlayActive]: menuIsActive,
+                    [style.overlay]: !menuStatus,
+                    [style.overlayActive]: menuStatus,
                 })}
             />
         </header>

@@ -2,7 +2,7 @@ import { useStore } from 'effector-react';
 import { FC, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getTheme } from '../lib';
-import { modelThemeProvider } from '../model';
+import { modelThemeProvider } from '../../../shared/models/theme-provider';
 import { IThemeProviderProps } from '../types';
 
 const ThemeProvider: FC<IThemeProviderProps> = ({ children }) => {

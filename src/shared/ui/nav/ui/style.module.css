@@ -36,8 +36,10 @@
     }
     .navigationActive {
         composes: navigation;
+        color: #fff;
         top: 0;
     }
+
     .list {
         flex-direction: column;
         padding-left: 10px;
