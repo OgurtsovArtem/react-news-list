@@ -24,28 +24,6 @@
     text-shadow: 1px 2px 14px rgb(34 60 80 / 35%);
 }
 
-.form {
-    margin-top: 85px;
-}
-
-.input {
-    padding: 21px 24px;
-    width: 100%;
-    border: 2px solid transparent;
-    border-radius: var(--border-radius-100);
-    font: var(--font-Roboto-16-regular);
-    transition: var(--transition-duration-300) ease-in-out;
-}
-
-.input:focus {
-    border: 2px solid var(--color-main-blue);
-}
-
-.button {
-    max-width: 168px;
-    width: 100%;
-}
-
 .videoContainer {
     position: absolute;
     top: 0;
@@ -83,29 +61,6 @@
         max-width: 385px;
     }
     .subtitle {
-        margin-top: 16px;
-    }
-    .input {
-        border-radius: var(--border-radius-100);
-    }
-    .form {
-        margin-top: 48px;
-    }
-}
-@media screen and (min-width: 583.5px) {
-    .form {
-        display: flex;
-        background-color: white;
-        border-radius: 100px;
-        overflow: hidden;
-    }
-}
-@media screen and (max-width: 583px) {
-    .form {
-        margin-top: 132px;
-    }
-    .button {
-        max-width: 100%;
         margin-top: 16px;
     }
 }

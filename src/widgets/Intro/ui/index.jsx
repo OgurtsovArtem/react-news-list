@@ -1,12 +1,9 @@
 import style from './style.module.css';
 import img from 'app/assets/images/intro.png';
 import video from 'app/assets/video/intro.mp4';
-import { Button } from 'shared/ui/button';
+import { SearchNews } from 'entities/search-news';
 
 const Intro = () => {
-    const startSearch = () => {
-        return;
-    };
     return (
         <section className={style.intro}>
             <div className={style.content}>
@@ -15,22 +12,7 @@ const Intro = () => {
                     Находите самые свежие статьи на любую тему и сохраняйте в
                     своём личном кабинете.
                 </h2>
-                <form className={style.form} id="search-from">
-                    <input
-                        className={style.input}
-                        type="text"
-                        placeholder="Введите тему новости"
-                        maxLength={80}
-                    />
-                    <Button
-                        className={style.button}
-                        color={'primary'}
-                        type="submit"
-                        onClick={startSearch}
-                    >
-                        Искать
-                    </Button>
-                </form>
+                <SearchNews />
             </div>
             <div className={style.videoContainer}>
                 <video

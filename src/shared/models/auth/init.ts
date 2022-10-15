@@ -8,7 +8,7 @@ $user.on(fetchAuthFx.doneData, (_, res) => res).on(userLogout, () => null);
 $isUserLoading.on(fetchAuthFx.pending, (_, isPending) => isPending);
 $isUserFailed.on(fetchAuthFx.fail, () => true);
 
-userLogout.watch((done) => {
+userLogout.watch(() => {
     deleteCookie('accessToken');
 });
 

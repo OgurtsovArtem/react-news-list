@@ -12,17 +12,6 @@ export const getUser = () => {
     }).then(checkResponse);
 };
 
-export interface ILoginDataTypes {
-    readonly email: string;
-    readonly password: string;
-}
-
-export interface IRegistrationDataTypes {
-    readonly email: string;
-    readonly name: string;
-    readonly password: string;
-}
-
 export const login = (data: ILoginDataTypes | object) => {
     return fetch(`${MAIN_URL}api/signin`, {
         method: 'POST',
@@ -42,3 +31,14 @@ export const registration = (data: IRegistrationDataTypes) => {
         body: JSON.stringify(data),
     }).then(checkResponse);
 };
+
+export interface ILoginDataTypes {
+    readonly email: string;
+    readonly password: string;
+}
+
+export interface IRegistrationDataTypes {
+    readonly email: string;
+    readonly name: string;
+    readonly password: string;
+}

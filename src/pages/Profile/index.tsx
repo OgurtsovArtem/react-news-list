@@ -1,11 +1,11 @@
-import { CardList } from 'widgets/card-list';
+import { CardsProfile } from 'widgets/cards-profile';
 import { ProfileInfo } from 'widgets/profile-info';
 
 const Profile = () => {
     return (
         <>
             <ProfileInfo />
-            <CardList type="profile" />
+            <CardsProfile />
         </>
     );
 };

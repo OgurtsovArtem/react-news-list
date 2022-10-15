@@ -5,7 +5,6 @@ import { App } from 'app';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import './shared/models';
-import './entities/theme-provider/model/init.ts';
 import ThemeProvider from 'entities/theme-provider/ui';
 
 const root = ReactDOM.createRoot(
