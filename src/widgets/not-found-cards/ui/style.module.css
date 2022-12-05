@@ -1,15 +1,15 @@
 .NotFoundCards {
-  text-align: center;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  background-color: var(--color-gray-light);
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: var(--color-gray-light);
 }
 .title {
-  margin-top: 30px;
-  font: var(--font-Roboto-Slab-26-regular);
+    margin-top: 30px;
+    font: var(--font-Roboto-Slab-26-regular);
 }
 .text {
-  margin-top: 13px;
-  font: var(--font-Roboto-18-regular);
-  color: var(--color-simulator-gray-text);
+    margin-top: 13px;
+    font: var(--font-Roboto-18-regular);
+    color: var(--color-simulator-gray-text);
 }

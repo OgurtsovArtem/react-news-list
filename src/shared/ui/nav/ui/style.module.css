@@ -1,0 +1,48 @@
+.navigation {
+    display: flex;
+    gap: 32px;
+    height: 100%;
+}
+
+.list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+@media screen and (max-width: 767px) {
+    .navigation {
+        gap: 16px;
+    }
+    .list {
+        gap: 16px;
+    }
+}
+
+@media screen and (max-width: 583px) {
+    .navigation {
+        position: fixed;
+        top: -100vh;
+        left: 0;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+        z-index: -1;
+        padding: 72px 10px 24px;
+        transition: 0.3s;
+    }
+    .navigationActive {
+        composes: navigation;
+        color: #fff;
+        top: 0;
+    }
+
+    .list {
+        flex-direction: column;
+        padding-left: 10px;
+        width: 100%;
+    }
+}

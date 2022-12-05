@@ -1,31 +1,46 @@
-import { FC, useEffect, useMemo } from "react";
-import ReactDOM from "react-dom";
-import Overaly from "shared/ui/overlay/ui";
-import style from "./style.module.css";
-import icon from "shared/assets/icons/close.svg";
-import { IModalProps } from "../types";
+import { FC, useCallback, useEffect, useMemo } from 'react';
+import ReactDOM from 'react-dom';
+import Overaly from 'shared/ui/overlay/ui';
+import style from './style.module.css';
+import icon from 'shared/assets/icons/close.svg';
+import { IModalProps } from '../types';
+import { modelModal } from 'shared/models/modal';
 
-const Modal: FC<IModalProps> = ({ onClose, children }) => {
-  useEffect(() => {
-    const escape = (event: KeyboardEvent) => (event.code === "Escape" ? onClose() : null);
-    document.addEventListener("keydown", escape);
-    return () => document.removeEventListener("keydown", escape);
-  }, [onClose]);
+const Modal: FC<IModalProps> = ({ children, id }) => {
+    const onClose = useCallback(() => {
+        modelModal.closeModal(id);
+    }, [id]);
 
-  const modal = (
-    <section className={style.modal}>
-      <div className={style.content}>
-        <button className={style.close} onClick={onClose}>
-          <img className={style.icon} src={icon} width="40" height="40" alt="close" />
-        </button>
-        {children}
-      </div>
-      <Overaly onClose={onClose} />
-    </section>
-  );
+    useEffect(() => {
+        const escape = (event: KeyboardEvent) =>
+            event.code === 'Escape' ? onClose() : null;
+        document.addEventListener('keydown', escape);
+        return () => document.removeEventListener('keydown', escape);
+    }, [onClose]);
 
-  const modalRoot = useMemo(() => document.getElementById("modal-root") as HTMLDivElement, []);
-  return ReactDOM.createPortal(modal, modalRoot);
+    const modal = (
+        <section className={style.modal}>
+            <div className={style.content}>
+                <button className={style.close} onClick={onClose}>
+                    <img
+                        className={style.icon}
+                        src={icon}
+                        width="40"
+                        height="40"
+                        alt="close"
+                    />
+                </button>
+                {children}
+            </div>
+            <Overaly onClose={onClose} />
+        </section>
+    );
+
+    const modalRoot = useMemo(
+        () => document.getElementById('modal-root') as HTMLDivElement,
+        []
+    );
+    return ReactDOM.createPortal(modal, modalRoot);
 };
 
 export default Modal;

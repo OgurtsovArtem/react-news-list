@@ -1,49 +1,49 @@
 /* ______________ Inter ______________ */
 @font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  src: url("./inter/inter-regular.woff") format("woff");
-  font-display: swap;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./inter/inter-regular.woff') format('woff');
+    font-display: swap;
 }
 
 /* ______________ Roboto ______________ */
 @font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  src: url("./roboto/roboto-regular.woff") format("woff");
-  font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./roboto/roboto-regular.woff') format('woff');
+    font-display: swap;
 }
 @font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  src: url("./roboto/roboto-medium.woff") format("woff");
-  font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./roboto/roboto-medium.woff') format('woff');
+    font-display: swap;
 }
 @font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 900;
-  src: url("./roboto/roboto-black.woff") format("woff");
-  font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    src: url('./roboto/roboto-black.woff') format('woff');
+    font-display: swap;
 }
 
 /* ______________ Roboto Slab ______________ */
 @font-face {
-  font-family: "Roboto Slab";
-  font-style: normal;
-  font-weight: 400;
-  src: url("./robotoSlab/robotoslab-regular.woff") format("woff");
-  font-display: swap;
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./robotoSlab/robotoslab-regular.woff') format('woff');
+    font-display: swap;
 }
 
 /* ______________ Source Sans Pro ______________ */
 @font-face {
-  font-family: "Source Sans Pro";
-  font-style: normal;
-  font-weight: 400;
-  src: url("./sourceSansPro/sourcesanspro-regular.woff") format("woff");
-  font-display: swap;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./sourceSansPro/sourcesanspro-regular.woff') format('woff');
+    font-display: swap;
 }

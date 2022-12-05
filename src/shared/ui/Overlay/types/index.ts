@@ -1,4 +1,4 @@
 export interface IOverlayProps {
-  onClose: () => void;
-  className?: string;
+    onClose: () => void;
+    className?: string;
 }

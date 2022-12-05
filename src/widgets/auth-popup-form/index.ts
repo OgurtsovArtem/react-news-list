@@ -1,1 +1,1 @@
-export { default as AuthPopupForm } from "./ui";
+export { default as AuthPopupForm } from './ui';

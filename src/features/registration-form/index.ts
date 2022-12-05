@@ -1,1 +1,1 @@
-export { default as RegistrationForm } from "./ui";
+export { default as RegistrationForm } from './ui';

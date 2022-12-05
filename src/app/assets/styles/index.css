@@ -1,0 +1,34 @@
+@import url('../fonts/fonts.css');
+@import url('./base.css');
+@import url('./scroll.css');
+@import url('./tech.css');
+@import url('./variables.css');
+
+@custom-media --media-mobile-s (max-width: 359px);
+@custom-media --media-mobile-m (max-width: 413px);
+@custom-media --media-mobile-l (max-width: 539px);
+@custom-media --media-tablet-s (max-width: 767px);
+@custom-media --media-tablet-m (max-width: 1023px);
+@custom-media --media-desktop-s (max-width: 1279px);
+@custom-media --media-desktop-m (max-width: 1439px);
+@custom-media --media-desktop-l (max-width: 1559px);
+@custom-media --media-desktop-xl (max-width: 1919px);
+
+@media screen and (max-width: 1919px) {
+}
+@media screen and (max-width: 1559px) {
+}
+@media screen and (max-width: 1439px) {
+}
+@media screen and (max-width: 1279px) {
+}
+@media screen and (max-width: 1023px) {
+}
+@media screen and (max-width: 767px) {
+}
+@media screen and (max-width: 583px) {
+}
+@media screen and (max-width: 413px) {
+}
+@media screen and (max-width: 359px) {
+}

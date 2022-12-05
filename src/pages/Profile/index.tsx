@@ -1,13 +1,13 @@
-import { CardList } from "widgets/card-list";
-import { ProfileInfo } from "widgets/profile-info";
+import { CardsProfile } from 'widgets/cards-profile';
+import { ProfileInfo } from 'widgets/profile-info';
 
 const Profile = () => {
-  return (
-    <>
-      <ProfileInfo />
-      <CardList type="profile" />
-    </>
-  );
+    return (
+        <>
+            <ProfileInfo />
+            <CardsProfile />
+        </>
+    );
 };
 
 export default Profile;

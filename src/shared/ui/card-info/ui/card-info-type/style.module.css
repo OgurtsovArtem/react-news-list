@@ -1,0 +1,13 @@
+.block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: var(--border-radius-10);
+    box-shadow: 0px 10px 22px rgba(59, 74, 116, 0.1);
+    z-index: var(--z-index-m);
+}
+.tag {
+    font: var(--font-Roboto-14-normal);
+    padding: 8px 12px;
+}

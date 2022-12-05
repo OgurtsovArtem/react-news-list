@@ -1,1 +1,1 @@
-export { default as Burger } from "./ui";
+export { default as Burger } from './ui';

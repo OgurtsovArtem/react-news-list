@@ -1,14 +1,14 @@
-import { About } from "widgets/about";
-import { CardList } from "widgets/card-list";
-import { Intro } from "widgets/intro";
+import { About } from 'widgets/about';
+import { CardsMain } from 'widgets/cards-main';
+import { Intro } from 'widgets/intro';
 const MainPage = () => {
-  return (
-    <>
-      <Intro />
-      <CardList />
-      <About />
-    </>
-  );
+    return (
+        <>
+            <Intro />
+            <CardsMain />
+            <About />
+        </>
+    );
 };
 
 export default MainPage;
